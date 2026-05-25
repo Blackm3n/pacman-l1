@@ -48,7 +48,7 @@ public:
 	void afficher_fantome(unsigned int x, unsigned int y, signed int dec, direction d, type_fantome tf);
 	void afficher_pacgomme(unsigned int x, unsigned int y, type_pacgomme tg);
 	void afficher_mur(unsigned int x, unsigned int y, type_mur tm = type_mur::normal);
-	void afficher_fruit(unsigned int x, unsigned int y);
+	void afficher_fruit(unsigned int x, unsigned int y, signed int dec = 0, direction d = direction::droite);
 	void afficher_invincibilite(float i);
 	void afficher_score(unsigned int s);
 	void afficher_resultat(type_resultat t);

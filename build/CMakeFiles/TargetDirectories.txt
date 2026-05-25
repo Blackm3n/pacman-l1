@@ -1,0 +1,3 @@
+C:/Users/afons/Projet_vscode/pacman/build/CMakeFiles/pacman.dir
+C:/Users/afons/Projet_vscode/pacman/build/CMakeFiles/edit_cache.dir
+C:/Users/afons/Projet_vscode/pacman/build/CMakeFiles/rebuild_cache.dir
