@@ -134,8 +134,8 @@ void affichage_pacman::afficher_mur(unsigned int x, unsigned int y, type_mur tm)
 	_fenetre.draw(rs);
 }
 
-void affichage_pacman::afficher_fruit(unsigned int x, unsigned int y) {
-	auto axy(xyd_vers_xy(x, y, 0, direction::droite));
+void affichage_pacman::afficher_fruit(unsigned int x, unsigned int y, signed dec, direction d) {
+	auto axy(xyd_vers_xy(x, y, dec, d));
 	_sprite_fruit.setPosition(axy.first, axy.second);
 	_fenetre.draw(_sprite_fruit);
 }
