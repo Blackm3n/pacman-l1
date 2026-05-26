@@ -14,7 +14,6 @@ bool Board::loadLevel(const std::string& filename) {
 
     // 1. Lire les dimensions
     file >> width >> height;
-    std::cout << "[DEBUG] Carte lue : " << width << "x" << height << std::endl;
 
     std::string line;
     // 2. Avancer jusqu'à trouver la première ligne de la carte (qui contient un mur '*' ou un espace)
@@ -32,26 +31,19 @@ bool Board::loadLevel(const std::string& filename) {
     }
 
     // 4. Lire la position de Pacman en toute sécurité
-    if (file >> startPacmanX >> startPacmanY) {
-        std::cout << "[DEBUG] Pacman trouve a : (" << startPacmanX << ", " << startPacmanY << ")" << std::endl;
-    } else {
-        std::cerr << "[DEBUG] Erreur fichier : Pacman introuvable. Forcage a (7,7)." << std::endl;
+    if (!(file >> startPacmanX >> startPacmanY)) {
         startPacmanX = 7;
         startPacmanY = 7;
     }
 
     // 5. Lire les fantômes
     if (file >> numGhosts) {
-        std::cout << "[DEBUG] Nombre de fantomes trouves : " << numGhosts << std::endl;
         for (int i = 0; i < numGhosts; ++i) {
             int gx, gy;
             if (file >> gx >> gy) {
                 ghostStarts.push_back({gx, gy});
-                std::cout << "[DEBUG] Fantome " << i << " a : (" << gx << ", " << gy << ")" << std::endl;
             }
         }
-    } else {
-        std::cerr << "[DEBUG] Aucun fantome trouve a la fin du fichier." << std::endl;
     }
 
     file.close();
